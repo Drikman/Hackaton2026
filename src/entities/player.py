@@ -22,7 +22,7 @@ class Player(Entity):
     def move(self, direction: Move):
         print(self.pos)
         if self.endurance == 0:
-            print("Vous êtes épuisé ! Reposez-vous au moins une seconde avant de continuer.")
+            print("\033[31mVous êtes épuisé ! Reposez-vous au moins une seconde avant de continuer.\033[0m")
         else:
             self.pos.move(direction)
             self.endurance -= 1
@@ -38,4 +38,4 @@ class Player(Entity):
         if type(effect) != type(Nothing):
             pass
         return None
-    
+

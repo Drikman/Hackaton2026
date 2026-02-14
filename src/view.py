@@ -72,8 +72,8 @@ class GraphicalView(Listener):
         self.player_view.draw(self.screen)
         self.player_view.draw_endurance_bar(self.screen, player.endurance, 5, 10, 10, 200, 20)
         self.player_view.Score(self.screen, self.score, 10, 10, 0, 0)
-
         pygame.display.flip()
+        
 
     def initialize(self):
         """
