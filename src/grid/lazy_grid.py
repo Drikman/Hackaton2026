@@ -10,8 +10,6 @@ from tiles.exit_tile import ExitTile
 from eventmanager import EventManager
 
 
-
-
 class LazyGrid:
     """Génération procédurale infinie et déterministe."""
     def __init__(self, seed: int,evmanager : EventManager):
