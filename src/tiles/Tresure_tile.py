@@ -1,6 +1,8 @@
 from entities.entity import Entity
+from entities.player import Player
 from tiles.tile import Tile
 from utils import Position
+from tiles.desert_tile import DesertTile
 
 
 class TresureTile(Tile):
@@ -12,4 +14,8 @@ class TresureTile(Tile):
         super().__init__(position)
 
     def on(self, entity: Entity):
+        if isinstance(entity, Player):
+            entity.score+=1
+            
+
         return "trésor"

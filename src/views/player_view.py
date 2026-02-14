@@ -24,7 +24,7 @@ class PlayerView:
         # Draw a black border around the health bar for clarity
         pygame.draw.rect(screen, BLACK, (x, y, length, height), 2)
     
-    def Score(self, screen, current,x,y,length,height):
+    def draw_score(self, screen, current):
         font = pygame.font.SysFont(None, 30)  # Police de taille 30
         text = font.render(f"Score : {current}", True, BLACK)
         screen.blit(text, (500, 10))  # Position en haut à droite

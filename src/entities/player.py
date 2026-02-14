@@ -16,6 +16,7 @@ class Player(Entity):
         self.color = (0, 0, 0)
         self.endurance = 5
         rest_thread = Thread(target=self.rest)
+        self.score = 0
 
         rest_thread.start()
 
