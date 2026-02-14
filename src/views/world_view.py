@@ -4,6 +4,10 @@ from tiles.desert_tile import DesertTile
 from tiles.water_tile import WaterTile
 from views.desert_tile_view import DesertTileView
 from views.water_tile_view import WaterTileView
+from views.lava_tile_view import LavaTileView
+from tiles.lava_Tile import LavaTile
+from tiles.Tresure_tile import TresureTile
+from views.Tresure_tile_view import TresureTileView
 
 class WorldView:
     """ 
@@ -12,7 +16,8 @@ class WorldView:
     def __init__(self):
         self.tile_views = {
             DesertTile: DesertTileView(),
-            WaterTile: WaterTileView()
+            WaterTile: WaterTileView(),
+            LavaTile : LavaTileView(),
         }
 
     def draw(self, screen, grid, player_pos):
