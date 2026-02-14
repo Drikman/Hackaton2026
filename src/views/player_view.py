@@ -5,12 +5,16 @@ from tiles.colors import BLACK, GREY,GREEN
 class PlayerView:
     """Cette classe est responsable de l'affichage du joueur dans le monde de jeu."""
     def draw(self, screen):
+        image_path = "assets/characters/basic/char_shielded_static_down.png"
+        personnage_img = pygame.image.load(image_path).convert_alpha()
+        personnage_img = pygame.transform.scale(personnage_img, (CELL_SIZE, CELL_SIZE))
         # DESSIN DU JOUEUR (Toujours au centre de l'écran)
         screen_center = (
-            (GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2,
-            (GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2
+            ((GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2 )-CELL_SIZE//2,
+            ((GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2)-CELL_SIZE//2
         )
-        pygame.draw.circle(screen, BLACK, screen_center, CELL_SIZE // 3)
+        imagerect = personnage_img.get_rect()
+        screen.blit(personnage_img,screen_center)
     
     def draw_endurance_bar(self, screen, current, max_amount, x, y, length, height):
         ratio = current / max_amount
