@@ -9,8 +9,6 @@ from utils import Position
 
 
 
-
-
 class LazyGrid:
     """Génération procédurale infinie et déterministe."""
     def __init__(self, seed: int):

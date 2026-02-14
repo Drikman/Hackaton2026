@@ -12,4 +12,4 @@ class TresureTile(Tile):
         super().__init__(position)
 
     def on(self, entity: Entity):
-        return None
+        return "trésor"

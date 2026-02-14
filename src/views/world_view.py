@@ -18,6 +18,7 @@ class WorldView:
             DesertTile: DesertTileView(),
             WaterTile: WaterTileView(),
             LavaTile : LavaTileView(),
+            TresureTile : TresureTileView(),
         }
 
     def draw(self, screen, grid, player_pos):
