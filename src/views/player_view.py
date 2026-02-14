@@ -13,7 +13,6 @@ class PlayerView:
             ((GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2 )-CELL_SIZE//2,
             ((GRID_SIZE // 2) * CELL_SIZE + CELL_SIZE // 2)-CELL_SIZE//2
         )
-        imagerect = personnage_img.get_rect()
         screen.blit(personnage_img,screen_center)
     
     def draw_endurance_bar(self, screen, current, max_amount, x, y, length, height):
