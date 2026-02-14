@@ -6,7 +6,7 @@ from utils import CELL_SIZE, GRID_SIZE, HEIGHT, WIDTH
 from listener import Listener
 from views.player_view import PlayerView
 from views.world_view import WorldView
-
+import time
 class GraphicalView(Listener):
     """
     Cette classe est responsable de l'affichage graphique du jeu en utilisant Pygame. 
@@ -21,6 +21,7 @@ class GraphicalView(Listener):
 
         La fonction d'initialisation configure les attributs de la classe,
         s'abonne aux événements du jeu et initialise les sous-vues pour le joueur et le monde.
+        temps_passé = time.time()
         """
 
         self.ev_manager = ev_manager
@@ -30,7 +31,7 @@ class GraphicalView(Listener):
         self.screen = None
         self.clock = None
         self.smallfont = None
-        
+        self.temp_passe= time.time
         # Sub-views
         self.player_view = PlayerView()
         self.world_view = WorldView()
@@ -72,6 +73,7 @@ class GraphicalView(Listener):
         self.player_view.draw(self.screen)
         self.player_view.draw_endurance_bar(self.screen, player.endurance, 5, 10, 10, 200, 20)
         self.player_view.draw_score(self.screen,player.score)
+        self.player_view.timer(self.screen,player.temps_passe, 10, 10, 0, 0)
         pygame.display.flip()
         
 

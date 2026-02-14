@@ -28,3 +28,8 @@ class PlayerView:
         font = pygame.font.SysFont(None, 30)  # Police de taille 30
         text = font.render(f"Score : {current}", True, BLACK)
         screen.blit(text, (500, 10))  # Position en haut à droite
+
+    def timer(self, screen, current,x,y,length,height):
+        font = pygame.font.SysFont(None, 30)  # Police de taille 30
+        text = font.render(f"Timer : {current}", True, BLACK)
+        screen.blit(text, (500, 30))  # Position en haut à droite

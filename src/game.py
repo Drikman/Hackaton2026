@@ -1,4 +1,5 @@
 import random
+import time
 import eventmanager as evmgr
 from entities.player import Player
 from grid.lazy_grid import LazyGrid
@@ -56,8 +57,11 @@ class GameEngine(Listener):
         """
         Démarre la boucle principale du jeu en postant des événements de Tick pour mettre à jour le jeu.  
         """
+        temps_passé = time.time()
         self.running = True
         self.ev_manager.post(evmgr.InitializeEvent())
         while self.running:
             newTick = evmgr.TickEvent()
             self.ev_manager.post(newTick)
+            if time.time()-temps_passé>=180:
+                self.running = False

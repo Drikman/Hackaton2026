@@ -17,6 +17,7 @@ class Player(Entity):
         self.endurance = 5
         rest_thread = Thread(target=self.rest)
         self.score = 0
+        self.temp_passe=0
 
         rest_thread.start()
 
@@ -32,6 +33,7 @@ class Player(Entity):
         print("APPELE")
         while(True):
             time.sleep(1)
+            self.temp_passe+= 1
             if(self.endurance < 5):
                 self.endurance += 1
 
