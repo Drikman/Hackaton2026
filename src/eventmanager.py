@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 from utils import Move
 from listener import Listener
 import sys
+import time
 
 
 @dataclass(frozen=True)
@@ -22,6 +23,7 @@ class QuitEvent(Event):
     def __str__(self) -> str:
         print("JARRIVE ICI")
         return "Quit Event"
+    
 
 
 @dataclass(frozen=True)
