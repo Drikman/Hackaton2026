@@ -1,0 +1,9 @@
+.idea/
+*__pycache__/
+.DS_Store
+src/foo.py
+*math_utils.c*
+poetry.lock
+*.o
+*.so
+build/
