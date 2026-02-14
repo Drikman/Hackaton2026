@@ -24,7 +24,7 @@ class GameEngine(Listener):
         self.running = False
         
         # Initialisation : Monde infini commençant à (1000, 1000)
-        self.grid = LazyGrid(seed=random.randint(0, 99999))
+        self.grid = LazyGrid(seed=random.randint(0, 99999),evmanager=ev_manager)
         self.player = Player(Position(1000, 1000))
 
     def move_player(self,direction):
@@ -37,6 +37,7 @@ class GameEngine(Listener):
         new_pos.move(direction)
         if not isinstance(self.grid.get_tile(new_pos.x, new_pos.y), WaterTile):
             self.player.move(direction)
+            self.grid.get_tile(new_pos.x,new_pos.y).on(self.player)
             
     def notify(self, event):
         """

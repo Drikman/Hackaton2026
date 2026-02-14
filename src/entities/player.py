@@ -16,9 +16,11 @@ class Player(Entity):
         self.color = (0, 0, 0)
         self.endurance = 5
         rest_thread = Thread(target=self.rest)
+
         rest_thread.start()
 
     def move(self, direction: Move):
+        print(self.pos)
         if self.endurance == 0:
             print("Vous êtes épuisé ! Reposez-vous au moins une seconde avant de continuer.")
         else:

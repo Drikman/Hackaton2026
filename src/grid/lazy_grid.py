@@ -6,16 +6,18 @@ from tiles.water_tile import WaterTile
 from tiles.lava_Tile import LavaTile
 from tiles.Tresure_tile import TresureTile
 from utils import Position
-
+from tiles.exit_tile import ExitTile
+from eventmanager import EventManager
 
 
 
 
 class LazyGrid:
     """Génération procédurale infinie et déterministe."""
-    def __init__(self, seed: int):
+    def __init__(self, seed: int,evmanager : EventManager):
         self.seed = seed
         self._cache = {}
+        self.evmanager = evmanager
 
     def get_tile(self, x: int, y: int) -> Tile:
         # 1. Vérifier le cache (modifications joueur)
@@ -25,7 +27,9 @@ class LazyGrid:
         # 2. Sécurité pour le point de départ
         if x == 1000 and y == 1000:
             return DesertTile(Position(x, y)) 
-
+        if x == 1005 and y == 1005:
+            ev = self.evmanager
+            return ExitTile(Position(x,y),ev)
         # 3. Génération basée sur la seed et les coordonnées
         rng = random.Random(f"{self.seed}_{x}_{y}")
         rand = rng.random()

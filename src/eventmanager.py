@@ -4,7 +4,7 @@ from weakref import WeakKeyDictionary
 from abc import ABC, abstractmethod
 from utils import Move
 from listener import Listener
-
+import sys
 
 
 @dataclass(frozen=True)
@@ -20,6 +20,7 @@ class Event(ABC):
 class QuitEvent(Event):
     """Événement pour signaler que le jeu doit se terminer."""
     def __str__(self) -> str:
+        print("JARRIVE ICI")
         return "Quit Event"
 
 
